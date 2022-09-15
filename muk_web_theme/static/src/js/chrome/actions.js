@@ -42,9 +42,9 @@ odoo.define('muk_web_theme.ActionManager', function (require) {
                 var res = this._super.apply(this, arguments);
                 return Promise.resolve().then(function () {
                     return res;
-                }).then (function () {
+                }).then (
                     $.proxy(self, '_hideMenusByAction', action)
-                })
+                )
             },
             _hideMenusByAction: function (action) {
                 var unique_selection = '[data-action-id=' + action.id + ']';
