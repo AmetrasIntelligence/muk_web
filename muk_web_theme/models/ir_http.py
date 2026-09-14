@@ -27,6 +27,7 @@ class IrHttp(models.AbstractModel):
             for company in request.env.user.company_ids:
                 result['user_companies']['allowed_companies'][company.id].update({
                     'has_background_image': bool(company.background_image),
+                    'background_image_unique': company._get_background_image_unique(),
                 })
         result['pager_autoload_interval'] = int(
             self.env['ir.config_parameter'].sudo().get_param(
