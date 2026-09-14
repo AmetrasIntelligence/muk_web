@@ -24,6 +24,7 @@ export class AppsMenu extends Dropdown {
                 model: 'res.company',
                 field: 'background_image',
                 id: this.env.services.company.currentCompany.id,
+                unique: this.env.services.company.currentCompany.background_image_unique,
             });
     	} else {
     		this.backgroundImageUrl = '/muk_web_theme/static/img/background.png';
